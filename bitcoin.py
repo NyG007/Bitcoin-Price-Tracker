@@ -13,15 +13,15 @@ def trackBitcoin():
         labelPrice.config(text=str(price) + " $")
         labelTime.config(text="Updated at: " + time)
 
-    except Exception as e:
+    except Exception as error:
         labelPrice.config(text="Error when searching for price.")
-        print(e)
+        print(error)
 
     canvas.after(1000, trackBitcoin)
 
 
 canvas = tk.Tk()
-canvas.geometry("400x500")
+canvas.geometry("800x500")
 canvas.title("Bitcoin Tracker")
 
 f1 = ("poppins", 24, "bold")
