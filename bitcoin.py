@@ -1,10 +1,10 @@
-import requests 
+import requests
 import tkinter as tk
 from datetime import datetime
 
 def trackBitcoin():
     try:
-        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,BRL"
+        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR"
         response = requests.get(url).json()
 
         price = response["USD"]
@@ -21,7 +21,7 @@ def trackBitcoin():
 
 
 canvas = tk.Tk()
-canvas.geometry("800x500")
+canvas.geometry("700x500")
 canvas.title("Bitcoin Tracker")
 
 f1 = ("poppins", 24, "bold")
@@ -40,4 +40,3 @@ labelTime.pack(pady = 20)
 trackBitcoin()
 
 canvas.mainloop()
-
